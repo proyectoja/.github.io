@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webinar · Ciudadanía digital</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      background: #14161A;
+      height: 100vh;
+      overflow: hidden;
+      font-family: "Work Sans", sans-serif;
+    }
+    .player-shell {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #player {
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+    #player, #player .clappr-player, #player .clappr-media, #player video, #player .media-control {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      background: linear-gradient(rgba(0, 0, 0, .72), rgba(0, 0, 0, 0));
+      pointer-events: none;
+    }
+    .topbar a {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #FBF9F5;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: rgba(20, 22, 26, .6);
+      transition: background .2s ease;
+    }
+    .topbar a:hover { background: rgba(164, 105, 59, .85); }
+    .topbar svg { width: 18px; height: 18px; }
+    .topbar span.title {
+      pointer-events: auto;
+      color: #C9B79B;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    .to-eval {
+      position: fixed;
+      left: 50%;
+      bottom: 34px;
+      transform: translate(-50%, 24px);
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 26px;
+      border-radius: 14px;
+      border: none;
+      background: #A4693B;
+      color: #FBF9F5;
+      font-family: "Work Sans", sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, .45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .to-eval.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+      pointer-events: auto;
+    }
+    .to-eval:hover { background: #91593A; }
+    .to-eval svg { width: 20px; height: 20px; }
+  </style>
+</head>
+<body>
+  <div class="player-shell">
+    <div class="topbar">
+      <a href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path>
+        </svg>
+        Volver
+      </a>
+      <span class="title">Webinar · Ciudadanía digital</span>
+    </div>
+    <div id="player"></div>
+    <a class="to-eval" id="toEval" href="evaluacion.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path>
+      </svg>
+      Ir a la evaluación
+    </a>
+  </div>
+  <script src="clappr.min.js"></script>
+  <script>
+    var player = new Clappr.Player({
+      source: "../video/video.exposicion.mp4",
+      parentId: "#player",
+      width: "100%",
+      height: "100%",
+      autoPlay: true,
+      clickToPause: true,
+      fullscreenEnabled: true,
+      persistConfig: false
+    });
+
+    var btnEval = document.getElementById("toEval");
+    player.on(Clappr.Events.PLAYER_ENDED, function () {
+      btnEval.classList.add("show");
+      player.pause();
+    });
+  </script>
+</body>
+</html>
