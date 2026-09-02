@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación · Ciudadanía digital</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-template-id="__page-root" style="background: #26282E;">
+  <div class="presentation-shell">
+   <div class="deck-frame">
+    <main class="slide-stage" aria-live="polite">
+     <section class="slide" aria-label="Evaluación">
+      <div class="slide-inner">
+       <p class="canva-text eyebrow" style="color: #A4693B; font-weight: 800; font-style: normal; font-size: 12px;">Evaluación</p>
+       <h2 class="canva-text slide-title mt-3 text-4xl md:text-5xl font-bold" style="color: #26282E; font-weight: 700; font-style: normal; font-size: 24px;">¿Cuánto aprendiste?</h2>
+       <div class="accent-rule"></div>
+       <p class="canva-text text-lg text-slate-600" style="color: #6F6A61; font-weight: 400; font-style: normal; font-size: 18px;">Responde todas las preguntas para comprobar lo aprendido. Cada pregunta tiene una sola respuesta correcta.</p>
+
+       <form id="quiz-form" novalidate>
+        <div class="form-question" data-question="1">
+         <p class="form-question-title">1. ¿Qué es la ciudadanía digital?</p>
+         <label class="form-option"><input type="radio" name="q1" value="A"><span>Saber utilizar únicamente las redes sociales</span></label>
+         <label class="form-option"><input type="radio" name="q1" value="B"><span>Utilizar la tecnología de forma segura, ética y responsable</span></label>
+         <label class="form-option"><input type="radio" name="q1" value="C"><span>Tener muchos dispositivos electrónicos</span></label>
+         <label class="form-option"><input type="radio" name="q1" value="D"><span>Utilizar Inteligencia Artificial todos los días</span></label>
+        </div>
+
+        <div class="form-question" data-question="2">
+         <p class="form-question-title">2. ¿Qué debemos hacer antes de compartir información en Internet?</p>
+         <label class="form-option"><input type="radio" name="q2" value="A"><span>Compartirla rápidamente</span></label>
+         <label class="form-option"><input type="radio" name="q2" value="B"><span>Verificar que sea confiable</span></label>
+         <label class="form-option"><input type="radio" name="q2" value="C"><span>Cambiarle el título</span></label>
+         <label class="form-option"><input type="radio" name="q2" value="D"><span>Publicarla en varias redes</span></label>
+        </div>
+
+        <div class="form-question" data-question="3">
+         <p class="form-question-title">3. ¿Cuál es una buena práctica de seguridad digital?</p>
+         <label class="form-option"><input type="radio" name="q3" value="A"><span>Compartir las contraseñas</span></label>
+         <label class="form-option"><input type="radio" name="q3" value="B"><span>Utilizar la misma contraseña para todo</span></label>
+         <label class="form-option"><input type="radio" name="q3" value="C"><span>Activar la autenticación multifactor</span></label>
+         <label class="form-option"><input type="radio" name="q3" value="D"><span>Abrir cualquier enlace recibido</span></label>
+        </div>
+
+        <div class="form-question" data-question="4">
+         <p class="form-question-title">4. ¿Qué debemos recordar al utilizar Inteligencia Artificial?</p>
+         <label class="form-option"><input type="radio" name="q4" value="A"><span>Que siempre tiene la razón</span></label>
+         <label class="form-option"><input type="radio" name="q4" value="B"><span>Que no necesita supervisión humana</span></label>
+         <label class="form-option"><input type="radio" name="q4" value="C"><span>Que sus respuestas deben ser verificadas</span></label>
+         <label class="form-option"><input type="radio" name="q4" value="D"><span>Que reemplaza nuestro criterio</span></label>
+        </div>
+
+        <div class="form-question" data-question="5">
+         <p class="form-question-title">5. ¿Qué es la huella digital?</p>
+         <label class="form-option"><input type="radio" name="q5" value="A"><span>La contraseña de un usuario</span></label>
+         <label class="form-option"><input type="radio" name="q5" value="B"><span>El registro de nuestras actividades en Internet</span></label>
+         <label class="form-option"><input type="radio" name="q5" value="C"><span>La dirección física de una persona</span></label>
+         <label class="form-option"><input type="radio" name="q5" value="D"><span>Un programa antivirus</span></label>
+        </div>
+
+        <div class="form-question" data-question="6">
+         <p class="form-question-title">6. ¿Cuál es un ejemplo de uso ético de la IA?</p>
+         <label class="form-option"><input type="radio" name="q6" value="A"><span>Utilizarla para engañar a otras personas</span></label>
+         <label class="form-option"><input type="radio" name="q6" value="B"><span>Presentar todo su contenido como propio</span></label>
+         <label class="form-option"><input type="radio" name="q6" value="C"><span>Verificar y utilizar responsablemente sus resultados</span></label>
+         <label class="form-option"><input type="radio" name="q6" value="D"><span>Crear información falsa para compartirla</span></label>
+        </div>
+
+        <div class="form-question" data-question="7">
+         <p class="form-question-title">7. ¿Qué ayuda a combatir la desinformación?</p>
+         <label class="form-option"><input type="radio" name="q7" value="A"><span>Compartir inmediatamente</span></label>
+         <label class="form-option"><input type="radio" name="q7" value="B"><span>Comparar y verificar las fuentes</span></label>
+         <label class="form-option"><input type="radio" name="q7" value="C"><span>Confiar en cualquier publicación</span></label>
+         <label class="form-option"><input type="radio" name="q7" value="D"><span>Creer en las imágenes automáticamente</span></label>
+        </div>
+
+        <div class="form-question" data-question="8">
+         <p class="form-question-title">8. ¿Qué debemos hacer antes de publicar algo en redes sociales?</p>
+         <label class="form-option"><input type="radio" name="q8" value="A"><span>Pensar en sus posibles consecuencias</span></label>
+         <label class="form-option"><input type="radio" name="q8" value="B"><span>Publicarlo rápidamente</span></label>
+         <label class="form-option"><input type="radio" name="q8" value="C"><span>Compartirlo con desconocidos</span></label>
+         <label class="form-option"><input type="radio" name="q8" value="D"><span>No revisar su contenido</span></label>
+        </div>
+
+        <div class="form-question" data-question="9">
+         <p class="form-question-title">9. ¿Quién tiene la responsabilidad final al utilizar una herramienta de IA?</p>
+         <label class="form-option"><input type="radio" name="q9" value="A"><span>La computadora</span></label>
+         <label class="form-option"><input type="radio" name="q9" value="B"><span>La plataforma</span></label>
+         <label class="form-option"><input type="radio" name="q9" value="C"><span>El usuario</span></label>
+         <label class="form-option"><input type="radio" name="q9" value="D"><span>El algoritmo</span></label>
+        </div>
+
+        <div class="form-question" data-question="10">
+         <p class="form-question-title">10. ¿Cuál es la idea principal de la ciudadanía digital?</p>
+         <label class="form-option"><input type="radio" name="q10" value="A"><span>Utilizar más tecnología</span></label>
+         <label class="form-option"><input type="radio" name="q10" value="B"><span>Evitar completamente la tecnología</span></label>
+         <label class="form-option"><input type="radio" name="q10" value="C"><span>Utilizar la tecnología de manera consciente y responsable</span></label>
+         <label class="form-option"><input type="radio" name="q10" value="D"><span>Depender de la Inteligencia Artificial</span></label>
+        </div>
+
+        <div class="form-question" data-question="11">
+         <p class="form-question-title">11. ¿Cuál de estas acciones representa mejor a un ciudadano digital responsable?</p>
+         <label class="form-option"><input type="radio" name="q11" value="A"><span>Compartir información sin verificar</span></label>
+         <label class="form-option"><input type="radio" name="q11" value="B"><span>Proteger sus datos y respetar a los demás</span></label>
+         <label class="form-option"><input type="radio" name="q11" value="C"><span>Publicar todo lo que encuentra</span></label>
+         <label class="form-option"><input type="radio" name="q11" value="D"><span>Utilizar IA sin revisar sus resultados</span></label>
+        </div>
+
+        <div id="form-error" class="hidden mb-4 p-4 rounded-xl border border-red-200 bg-red-50 text-red-700 font-semibold"></div>
+
+        <div class="flex flex-col sm:flex-row gap-3 justify-end mt-3">
+         <button type="button" id="reset-form" class="control" style="background: #FBF9F5; color: #26282E; font-weight: 700; font-style: normal; font-size: 16px;">Borrar respuestas</button>
+         <button type="submit" class="control next-control" style="background: #A4693B; color: #FBF9F5; font-weight: 700; font-style: normal; font-size: 16px;">Enviar</button>
+        </div>
+       </form>
+
+       <div id="quiz-result" class="hidden mt-8 rounded-2xl border border-blue-100 bg-blue-50 p-7 text-center"></div>
+      </div>
+     </section>
+    </main>
+    <footer class="footerbar canva-footer" style="background: #FBF9F5;">
+     <a href="pagina-12.html" class="control" aria-label="Diapositiva anterior" style="background: #FBF9F5; color: #26282E; font-weight: 700; font-style: normal; font-size: 16px;">Anterior</a>
+     <div class="flex items-center gap-3"><span class="text-sm font-bold text-slate-600" aria-live="polite">13 / 13</span>
+      <div class="progress-track" aria-label="Progreso de la presentación">
+       <div class="progress-fill" style="width: 100%"></div>
+      </div>
+     </div><a class="control disabled" aria-disabled="true" aria-label="Diapositiva final" style="background: #FBF9F5; color: #26282E; font-weight: 700; font-style: normal; font-size: 16px;">Fin de la presentación</a>
+    </footer>
+   </div>
+  </div>
+  <script>
+    const answers = { q1: "B", q2: "B", q3: "C", q4: "C", q5: "B", q6: "C", q7: "B", q8: "A", q9: "C", q10: "C", q11: "B" };
+    const form = document.getElementById("quiz-form");
+    const errorBox = document.getElementById("form-error");
+    const resultBox = document.getElementById("quiz-result");
+    const messages = {
+      missing: "Para enviar el formulario debes responder todas las preguntas, incluidas las respuestas marcadas.",
+      correct: "¡Excelente trabajo! Respondiste correctamente todas las preguntas.",
+      good: "¡Muy bien! Tienes un buen conocimiento de la ciudadanía digital.",
+      review: "Revisa los temas nuevamente e intenta de nuevo."
+    };
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const unanswered = Object.keys(answers).filter((q) => !form.querySelector('input[name="' + q + '"]:checked'));
+      if (unanswered.length > 0) {
+        errorBox.classList.remove("hidden");
+        errorBox.textContent = "Faltan " + unanswered.length + " pregunta(s) por responder: " + unanswered.map((q) => q.replace("q", "")).join(", ") + ".";
+        const first = form.querySelector('input[name="' + unanswered[0] + '"]');
+        first.closest(".form-question").scrollIntoView({ behavior: "smooth", block: "center" });
+        first.focus();
+        return;
+      }
+      errorBox.classList.add("hidden");
+
+      let score = 0;
+      Object.keys(answers).forEach((q) => {
+        const selected = form.querySelector('input[name="' + q + '"]:checked').value;
+        const question = form.querySelector('.form-question[data-question="' + q.replace("q", "") + '"]');
+        const options = question.querySelectorAll(".form-option");
+        options.forEach((opt) => {
+          const input = opt.querySelector("input");
+          opt.classList.remove("correct", "incorrect");
+          if (input.value === answers[q]) opt.classList.add("correct");
+          else if (input.checked) opt.classList.add("incorrect");
+        });
+        if (selected === answers[q]) score++;
+      });
+
+      const pct = Math.round((score / 11) * 100);
+      let verdict = messages.review;
+      if (pct === 100) verdict = messages.correct;
+      else if (pct >= 70) verdict = messages.good;
+      resultBox.classList.remove("hidden");
+      resultBox.innerHTML = '<p class="text-4xl font-bold" style="color: #513F2B;">' + score + ' / 11</p>' +
+        '<p class="mt-2 text-xl font-semibold" style="color: #513F2B;">Calificación: ' + pct + '%</p>' +
+        '<p class="mt-3 text-lg" style="color: #6F6A61;">' + verdict + '</p>';
+      resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    document.getElementById("reset-form").addEventListener("click", () => {
+      form.reset();
+      form.querySelectorAll(".form-option").forEach((opt) => opt.classList.remove("correct", "incorrect"));
+      errorBox.classList.add("hidden");
+      resultBox.classList.add("hidden");
+    });
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>

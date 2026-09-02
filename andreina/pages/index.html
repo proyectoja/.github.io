@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciudadanía digital en la era de la Inteligencia Artificial</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #26282E;
+      color: #FBF9F5;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Work Sans", sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+    .bg-photo {
+      position: fixed;
+      inset: -24px;
+      z-index: 0;
+      background: url("../images/fondo-inicio.png") center / cover no-repeat;
+      filter: blur(3px) saturate(.75);
+      transform: scale(1.1);
+    }
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background: rgba(25, 28, 34, .72);
+    }
+    .loader {
+      position: relative;
+      z-index: 2;
+      width: min(64vmin, 340px);
+      height: min(64vmin, 340px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ring {
+      position: absolute;
+      inset: 0;
+      transform: rotate(-90deg);
+    }
+    .ring-track {
+      fill: none;
+      stroke: #F0E0CE;
+      stroke-width: 10;
+    }
+    .ring-bar {
+      fill: none;
+      stroke: #A4693B;
+      stroke-width: 10;
+      stroke-linecap: round;
+      transition: stroke-dashoffset .3s ease;
+    }
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .percent {
+      font-family: "Work Sans", sans-serif;
+      font-weight: 800;
+      font-size: clamp(44px, 11vmin, 64px);
+      letter-spacing: -.03em;
+      color: #FBF9F5;
+    }
+    .label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #C9B79B;
+    }
+    .spinner {
+      position: absolute;
+      inset: 14px;
+      border: 3px solid transparent;
+      border-top-color: #D98E5F;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    a.skip {
+      position: fixed;
+      bottom: 18px;
+      z-index: 3;
+      color: #C9B79B;
+      font-size: 13px;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-photo" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+  <div class="loader" role="status" aria-live="polite" aria-label="Cargando la presentación">
+    <svg class="ring" viewBox="0 0 160 160" aria-hidden="true">
+      <circle class="ring-track" cx="80" cy="80" r="74"></circle>
+      <circle class="ring-bar" id="bar" cx="80" cy="80" r="74"></circle>
+    </svg>
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="center">
+      <span class="percent" id="percent">0%</span>
+      <span class="label">Cargando</span>
+    </div>
+  </div>
+  <a class="skip" href="pagina-1.html">Abrir directamente</a>
+  <script>
+    (function () {
+      var circle = document.getElementById("bar");
+      var pctEl = document.getElementById("percent");
+      var R = 74;
+      var C = 2 * Math.PI * R;
+      var DURATION = 5000;
+      var STEP = 100;
+      var start = Date.now();
+      var last = 0;
+      circle.style.strokeDasharray = C;
+      circle.style.strokeDashoffset = C;
+      function update(p) {
+        last = p;
+        circle.style.strokeDashoffset = C * (1 - p / 100);
+        pctEl.textContent = Math.round(p) + "%";
+      }
+      function tick() {
+        var elapsed = Date.now() - start;
+        if (elapsed >= DURATION) {
+          update(100);
+          setTimeout(function () { window.location.href = "pagina-1.html"; }, 400);
+          return;
+        }
+        var t = elapsed / DURATION;
+        var eased = 100 * (0.04 + 0.96 * t * (2 - t));
+        var wobble = Math.random() * 7 - 3.5;
+        var target = Math.min(100, Math.max(eased + wobble, eased - 4));
+        var next = Math.min(100, Math.max(last + 1, Math.round(target)));
+        update(next);
+        setTimeout(tick, STEP);
+      }
+      update(1 + Math.floor(Math.random() * 6));
+      setTimeout(tick, STEP);
+    })();
+  </script>
+</body>
+</html>
